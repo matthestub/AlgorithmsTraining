@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ArrayStructures {
 
     private int[] theArray = new int[50];
@@ -5,8 +7,14 @@ public class ArrayStructures {
 
     public void generateRandomArray() {
 
-        for(int i = 0; i < arraySize; i++) {
-            theArray[i] = (int) (Math.random()*10)+10;
+//        for(int i = 0; i < arraySize; i++) {
+//            theArray[i] = (int) (Math.random()*10)+10;
+//        }
+
+        Random random = new Random();
+
+        for (int i = 0; i < arraySize; i++) {
+            theArray[i] = random.nextInt(100);
         }
 
     }
@@ -161,6 +169,25 @@ public class ArrayStructures {
 
     }
 
+
+    public void insertionSort() {
+
+        for (int i = 1; i < arraySize; i++) {
+
+            int currentValue = theArray[i];
+            int j = i - 1;
+
+            while (j >= 0 && theArray[j] > currentValue) {
+                theArray[j+1] = theArray[j];
+                j--;
+            }
+
+            theArray[j+1] = currentValue;
+            printHorizontalArray(i, -1);
+        }
+
+    }
+
     public void printHorizontalArray(int i, int j) {
 
         for (int n = 0; n <= theArray.length; n++) System.out.print("-");
@@ -222,7 +249,7 @@ public class ArrayStructures {
 //        newArray.insertValue(55);
 //        newArray.printArray();
 //
-        newArray.selectionSort();
+        newArray.insertionSort();
         newArray.printArray();
         //newArray.binarySearchForValue(13);
 
