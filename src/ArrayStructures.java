@@ -69,7 +69,8 @@ public class ArrayStructures {
     }
 
     //Linear search - if I want to find ALL matches in the Array
-    //Binary Search - if I want to find ONE EXACT match in the Array. Values need to be sorted, duplicates are allowed.
+    //Binary Search - if I want to find ONE EXACT match in the Array.
+    //Values need to be sorted, duplicates are allowed.
 
 
     public String linearSearchForValue(int value) {
