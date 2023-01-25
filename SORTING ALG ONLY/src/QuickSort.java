@@ -30,19 +30,21 @@ public class QuickSort {
         for (int j = start; j <= end - 1; j++) {
             if (array[j] < pivot) {
                 i++;
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                swap(array, i, j);
             }
         }
         i++;
-        int temp = array[i];
-        array[i] = array[end];
-        array[end] = temp;
+        swap(array, i, end);
 
         return i;
     }
 
+
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 
 
     private static void printArray(int[] arrayToPrint) {
